@@ -1,0 +1,23 @@
+<div class="contenedor">
+  
+  <h1>Listado de Entradas</h1>
+  <hr />
+
+  <% @posts.each do |post| %>
+  <div class="entrada">
+    <h2>Nombre: <%= post.nombre %></h2>
+    <h3>Titulo: <%= post.titulo %></h3>
+    <p><%= post.contenido %></p>
+    <h6><%= link_to 'Mostar', post %> - <%= link_to 'Editar', edit_post_path(post) %> - <%= link_to 'Eliminar', post, method: :delete, data: { confirm: '¿Esta Seguro?' } %></h6>
+    <div class="line01"></div>
+  </div>
+  <% end %>
+
+
+  <br>
+
+  <%= link_to 'Nueva Entrada', new_post_path %>
+
+</div>
+
+
